@@ -18,11 +18,11 @@ button, a, input[type="submit"] {
   cursor: pointer;
   transition: all 500ms;
   text-decoration: none;
+}
 
-  &:hover {
-    -webkit-transform: translateY(-3px);
-	  transform: translateY(-3px);
-  }
+button:hover, a:hover, input[type="submit"]:hover {
+  -webkit-transform: translateY(-3px);
+  transform: translateY(-3px);
 }
 
 header {
@@ -86,10 +86,10 @@ header .right-side a {
   font-size: 15px;
   font-weight: 500;
   text-align: center;
+}
 
-  &:hover {
-    background-color: rgba(255, 234, 234, 0.9);
-  }
+header .right-side a:hover{
+  background-color: rgba(255, 234, 234, 0.9);
 }
 
 footer {
@@ -150,8 +150,8 @@ footer .developer a {
   border-radius: 4px;
   background-color: #FF9696;
   font-size: 15px;
+}
 
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.5);
-  }
+footer .developer a:hover{
+  background-color: rgba(255, 255, 255, 0.5);
 }

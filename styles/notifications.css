@@ -25,12 +25,13 @@ section#get-notifications {
   }
 }
 
-section#get-notifications p {
+section#get-notifications h6 {
   position: relative;
   z-index: 1;
   text-align: center;
   font-size: 16px;
   max-width: 700px;
+  font-weight: 400;
   margin: 0 auto 40px;
 }
 
@@ -89,10 +90,10 @@ section#get-notifications .field input {
   font-size: 16px;
   padding: 8px 20px;
   border-radius: 4px;
+}
 
-  &:focus {
-    outline: none;
-  }
+section#get-notifications .field input:focus {
+  outline: none;
 }
 
 section#get-notifications .checkbox-fields {
@@ -123,28 +124,28 @@ section#get-notifications input[type="checkbox"] {
   appearance: none;
   cursor: pointer;
   transition: background 175ms cubic-bezier(0.1, 0.1, 0.25, 1);
+}
 
-  &::before {
-    position: absolute;
-    content: '';
-    left: 5px;
-    width: 5px;
-    height: 10px;
-    border-style: solid;
-    border-color: white;
-    border-width: 0 3px 3px 0;
-    transform: rotate(45deg);
-    opacity: 0;
-  }
+section#get-notifications input[type="checkbox"]::before {
+  position: absolute;
+  content: '';
+  left: 5px;
+  width: 5px;
+  height: 10px;
+  border-style: solid;
+  border-color: white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+  opacity: 0;
+}
 
-  &:checked {
-    border-color: #f8db37;
-    background: #f8db37;
+section#get-notifications input[type="checkbox"]:checked {
+  border-color: #f8db37;
+  background: #f8db37;
+}
 
-    &::before {
-      opacity: 1;
-    }
-  }
+section#get-notifications input[type="checkbox"]:checked::before {
+  opacity: 1;
 }
 
 section#get-notifications .submit {
