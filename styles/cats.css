@@ -35,7 +35,7 @@ section#cats-avaliable .cards {
   flex-direction: column;
   align-items: center;
   border-radius: 16px;
-  background-image: url(/assets/background-card.png);
+  background-image: url(../assets/background-card.png);
 }
 
 .cat-card .card-top {
