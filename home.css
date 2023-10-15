@@ -1,0 +1,350 @@
+section#main-banner {
+  background-color: #FFE4E4;
+  padding: 60px 80px 0;
+  position: relative;
+  margin-top: 80px;
+}
+
+@media screen and (max-width: 600px) {
+  section#main-banner {
+    padding: 60px 40px 0;
+    margin-top: 120px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  section#main-banner {
+    padding: 60px 120px 100px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  section#main-banner .banner-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+section#main-banner h1 {
+  font-family: Mali;
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+section#main-banner h1 img {
+  position: relative;
+  bottom: -5px;
+}
+
+section#main-banner p {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 40px;
+  max-width: 600px;
+}
+
+@media screen and (max-width: 600px) {
+  section#main-banner p {
+    margin-bottom: 32px;
+  }
+}
+
+section#main-banner button {
+  background-color: #FFD232;
+  box-shadow: 0px 0px 8px 0px #FFE067;
+  border-radius: 8px;
+  padding: 16px 28px;
+
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+section#main-banner #cat-banner {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  justify-content: end;
+  padding-bottom: 40px;
+  margin-top: -100px;
+}
+
+@media screen and (max-width: 650px) {
+  section#main-banner #cat-banner {
+    margin-top: 40px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  section#main-banner #cat-banner {
+    bottom: -60px;
+    justify-content: center;
+    margin-top: 0;
+  }
+}
+
+section#main-banner #cat-banner img {
+  width: 450px;
+  max-width: 100%;
+}
+
+section#main-banner #ground {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  max-height: 220px;
+  width: 100%;
+}
+
+section#main-banner #banner-paws {
+  position: absolute;
+  top: 20px;
+  right: 0;
+}
+
+@media screen and (max-width: 800px) {
+  section#main-banner #banner-paws {
+    width: 100px;
+  }
+}
+
+section#our-cats, section#organizations, section#about-us {
+  padding: 60px 80px 80px;
+}
+
+@media screen and (max-width: 600px) {
+  section#our-cats, section#organizations, section#about-us {
+    padding: 60px 40px 80px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  section#our-cats, section#organizations, section#about-us {
+    padding: 60px 120px 80px;
+  }
+}
+
+section#our-cats {
+  background-color: #FBF5D9;
+  position: relative;
+  padding: 60px 80px 150px;
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 130px;
+    position: absolute;
+    bottom: -0.3%;
+    left: 0;
+    background-size: auto;
+    background-repeat: repeat no-repeat;
+    background-position: 20vw bottom;
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1200 134' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M0 22L33 19C82 13 133 14 200 29C267 44 333 67 400 70C467 74 533 59 600 40C667 22 733 0 800 0C867 0 933 22 1000 29C1067 37 1133 29 1167 26L1200 22V134H1167C1133 134 1067 134 1000 134C933 134 867 134 800 134C733 134 667 134 600 134C533 134 467 134 400 134C333 134 267 134 200 134C133 134 67 134 33 134H0V22.332Z' fill='%23fec7c7'/></svg>");
+  }
+}
+
+@media screen and (max-width: 600px) {
+  section#our-cats {
+    padding: 60px 40px 150px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  section#our-cats {
+    padding: 60px 120px 150px;
+  }
+}
+ 
+section#organizations {
+  background-color: #fec7c7;
+  padding: 0 80px 80px;
+}
+
+@media screen and (max-width: 600px) {
+  section#organizations {
+    padding: 0 40px 80px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  section#organizations {
+    padding: 0 120px 80px;
+  }
+}
+
+section#organizations .card {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  gap: 24px;
+  padding: 28px 32px 32px 32px;
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  &:first-of-type {
+    margin-bottom: 32px;
+  }
+}
+
+section#organizations h4 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 800px) {
+  section#organizations h4 {
+    text-align: center;
+  }
+}
+
+section#organizations .card-content {
+  display: flex;
+  gap: 32px;
+}
+
+@media screen and (max-width: 800px) {
+  section#organizations .card-content {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+section#organizations img {
+  border-radius: 12px;
+}
+
+section#organizations .card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+@media screen and (max-width: 800px) {
+  section#organizations .card-info {
+    align-items: center;
+  }
+}
+
+section#organizations p {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+section#organizations .card-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+@media screen and (max-width: 800px) {
+  section#organizations .card-buttons {
+    justify-content: center;
+  }
+}
+
+section#organizations a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 4px;
+
+  font-size: 13px;
+  font-weight: 400;
+  text-align: left;
+}
+
+section#organizations .facebook {
+  background-color: #AFD9F8;
+
+  &:hover {
+    box-shadow: 0px 2px 12px 0px #80caff83;
+  }
+}
+
+section#organizations .phone {
+  background-color: #FFF4B9;
+
+  &:hover {
+    box-shadow: 0px 2px 12px 0px #ffea7683;
+  }
+}
+
+section#organizations .location {
+  background-color: #AEEDBC;
+
+  &:hover {
+    box-shadow: 0px 2px 12px 0px #60dd7b83;
+  }
+}
+
+section#organizations .no-location {
+  background-color: #d8d8d8;
+  cursor: not-allowed;
+
+  &:hover {
+    transform: none;
+  }
+}
+
+section#organizations .support {
+  background-color: #FFB3C5;
+
+  &:hover {
+    box-shadow: 0px 2px 12px 0px #e06e8983;
+  }
+}
+
+section#about-us {
+  position: relative;
+  background-color: #FBF5D9;
+}
+
+section#about-us p {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+  max-width: 1000px;
+  margin: 0 auto;
+
+  &:not(:last-child) {
+    margin-bottom: 16px;
+  }
+}
+
+section#about-us .paw {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+section#about-us .stars {
+  position: absolute;
+  right: 20px;
+  top: 40px;
+}
+
+section#about-us .paw-contour {
+  position: absolute;
+  right: 0;
+  bottom: 120px;
+}
+
+#cats-moving {
+  padding: 20px;
+  background-color: #ffefa3;
+  width: 100%;
+}
+#cats-moving .cats {
+  background-image: url(./assets/cats.png);
+  background-repeat: repeat-x;
+  width: 100%;
+  height: 60px;
+}

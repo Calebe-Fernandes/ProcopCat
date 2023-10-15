@@ -1,0 +1,177 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+section#get-notifications {
+  background-color: #FFE4E4;
+  padding: 60px 80px 100px;
+  position: relative;
+  margin-top: 80px;
+  flex: 1;
+}
+
+@media screen and (max-width: 600px) {
+  section#get-notifications {
+    padding: 60px 40px 100px;
+    margin-top: 120px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  section#get-notifications {
+    padding: 60px 120px 100px;
+  }
+}
+
+section#get-notifications p {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  font-size: 16px;
+  max-width: 700px;
+  margin: 0 auto 40px;
+}
+
+@media screen and (max-width: 600px) {
+  section#get-notifications p {
+    font-size: 14px;
+    margin: 0 auto 28px;
+  }
+}
+
+section#get-notifications .strong {
+  font-weight: 600;
+}
+
+
+section#get-notifications form {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  padding: 40px 60px 60px;
+  background-color: #fff0f0;
+  border-radius: 16px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 600px) {
+  section#get-notifications form {
+    padding: 20px 30px 30px;
+  }
+}
+
+section#get-notifications .grid {
+  display: flex;
+  gap: 20px;
+}
+
+section#get-notifications .field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+section#get-notifications .field label {
+  color: #5e5e5e;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+section#get-notifications .field input {
+  width: 100%;
+  font-size: 16px;
+  padding: 8px 20px;
+  border-radius: 4px;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+section#get-notifications .checkbox-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+section#get-notifications .checkbox-field {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+section#get-notifications .checkbox-field label {
+  font-size: 16px;
+}
+
+section#get-notifications input[type="checkbox"] {
+  position: relative;
+  margin-top: 3.5px;
+  width: 20px;
+  min-width: 20px;
+  aspect-ratio: 1 / 1;
+  border: 2px solid #a1a1a1;
+  border-radius: 4px;
+  appearance: none;
+  cursor: pointer;
+  transition: background 175ms cubic-bezier(0.1, 0.1, 0.25, 1);
+
+  &::before {
+    position: absolute;
+    content: '';
+    left: 5px;
+    width: 5px;
+    height: 10px;
+    border-style: solid;
+    border-color: white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+    opacity: 0;
+  }
+
+  &:checked {
+    border-color: #f8db37;
+    background: #f8db37;
+
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+section#get-notifications .submit {
+  margin-top: 12px;
+  padding: 12px 24px;
+  background-color: #ff9e9e;
+  border-radius: 8px;
+
+  font-size: 16px;
+  font-weight: 600;
+}
+
+section#get-notifications .paw {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+section#get-notifications .stars {
+  position: absolute;
+  right: 20px;
+  top: 40px;
+}
+
+section#get-notifications .paw-contour {
+  position: absolute;
+  right: 0;
+  bottom: 200px;
+  width: 150px;
+}
