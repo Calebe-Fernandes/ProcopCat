@@ -1,0 +1,125 @@
+section#cats-avaliable {
+  background-color: #fafafa;
+  padding: 140px 80px 60px;
+}
+
+@media screen and (max-width: 600px) {
+  section#cats-avaliable {
+    padding: 200px 40px 60px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  section#cats-avaliable {
+    padding: 140px 120px 100px;
+  }
+}
+
+section#cats-avaliable .cards {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.cat-card {
+  background-color: #F49696;
+  width: 100%;
+  max-width: 260px;
+  padding-bottom: 40px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 16px;
+  background-image: url(/assets/background-card.png);
+}
+
+.cat-card .card-top {
+  width: 100%;
+  padding: 20px;
+  border-radius: 16px 16px 0 0;
+  background-color: rgba(195, 102, 102, 0.60);
+}
+
+.cat-card .card-top p {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.cat-card .polaroid {
+  width: calc(100% - 80px);
+  background-color: #fff;
+  padding: 10px 10px 40px 10px;
+  transform: rotate(4deg);
+  position: relative;
+  margin: 40px 0;
+  box-shadow: 4px 4px 0px 0px #FFDC61;
+}
+
+.cat-card .cat-picture {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.cat-card .tape {
+  position: absolute;
+  top: -20px;
+  left: -25px;
+}
+
+.cat-card .extra-infos {
+  position: absolute;
+  right: 0;
+  top: 250px;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 8px;
+}
+
+.cat-card .extra-info {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px;
+  border-radius: 100px 0 0 100px;
+  background-color: #C36666;
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.16);
+}
+
+.cat-card .extra-info span {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.cat-card .extra-info i {
+  color: #fff;
+  font-size: 13px;
+}
+
+.cat-card .info {
+  width: calc(100% - 60px);
+  height: 45px;
+  border-radius: 8px;
+  background-color: #FFEF61;
+  color: #a24a4a;
+  font-size: 14px;
+  font-weight: 700;
+  box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.08);
+}
+
+.cat-card button:disabled {
+  background-color: #d8d8d8;
+  color: #7d7d7d;
+  cursor: not-allowed;
+}
