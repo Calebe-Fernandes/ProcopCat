@@ -340,6 +340,13 @@ section#organizations #cat-side {
   top: 31px;
 }
 
+@media screen and (max-width: 600px) {
+  section#organizations #cat-side {
+    width: 70px;
+    right: -40px;
+  }
+}
+
 section#about-us {
   position: relative;
   background-color: #FBF5D9;
