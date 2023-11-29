@@ -9,8 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mali&family=Poppins&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/notifications.css">
     <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/subscribers.css">
   </head>
 
   <body>
@@ -32,49 +32,65 @@
       </nav>
     </header>
 
-    <section id="get-notifications">
-      <h6>
-        Receba <span class="strong">notificações</span> sobre eventos de adoções, novos gatinhos disponíveis para adoção, 
-        além de curiosidades, dicas e informações úteis sobre cuidados felinos. Tudo para que você 
-        e seu novo companheiro se dêem muito bem :D
-      </h6>
+    <section id="subscribers-section">
+      <div class="section-header">
+        <h2>Inscritos nas notificações</h2>
 
-      <form id="subscription-form">
-        <div class="grid">
-          <div class="field">
-            <label for="name">Nome</label>
-            <input type="text" id="name" name="name" required>
-          </div>
+        <button onclick="deleteAll()" class="delete-all">Excluir todos</button>
+      </div>
 
-          <div class="field">
-            <label for="last-name">Sobrenome</label>
-            <input type="text" id="last-name" name="last-name" required>
+      <div class="filters">
+        <div>
+          <p>Filtrar inscritos em:</p>
+
+          <div class="fields">
+            <div class="field">
+              <label>Curiosidades e cuidados de gatos</label>
+              <select id="filterAbout">
+                <option value="" selected>Todos</option>
+                <option value="true">Sim</option>
+                <option value="false">Não</option>
+              </select>
+            </div>
+            
+            <div class="field">
+              <label>Gatos para adoção em Cornélio Procópio</label>
+              <select id="filterAdoptions">
+                <option value="" selected>Todos</option>
+                <option value="true">Sim</option>
+                <option value="false">Não</option>
+              </select>
+            </div>
           </div>
         </div>
-        
-        <div class="field">
-          <label for="email">E-mail:</label>
-          <input type="email" id="email" name="email" placeholder="Insira um e-mail válido" required>
-        </div>
 
-        <div class="checkbox-fields">
-          <div class="checkbox-field">
-            <input type="checkbox" id="about" name="about">
-            <label for="about">Quero saber sobre curiosidades e cuidados de gatos ♡</label>
-          </div>
+        <div class="buttons-container">
+          <button onclick="filter()" class="clean-button">
+            Limpar filtros
+          </button>
   
-          <div class="checkbox-field">
-            <input type="checkbox" id="adoptions" name="adoptions">
-            <label for="adoptions">Quero ser notificado sobre gatos para adoção em Cornélio Procópio.</label>
-          </div>
-        </div>
+          <button onclick="filter()" class="filter-button">
+            <i class="fa-solid fa-filter"></i>
+            Filtrar
+          </button>
+        </div> 
+      </div>
 
-        <input type="submit" class="submit" value="Enviar">
-      </form>
+      <div class="table-container">
+        <table id="subscribers-table">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Email</th>
+              <th class="center">Curiosidades e cuidados</th>
+              <th class="center" style="min-width: 130px;">Gatos para adoção</th>
+              <th></th>
+            </tr>
+          </thead>
 
-      <img src="./assets/about-us-left.svg" alt="" class="paw">
-      <img src="./assets/about-us-stars.svg" alt="" class="stars">
-      <img src="./assets/about-us-paw-contour.svg" alt="" class="paw-contour">
+          <tbody></tbody>
+        </table> 
+      </div>     
     </section>
 
     <footer>
