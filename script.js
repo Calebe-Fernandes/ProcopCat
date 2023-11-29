@@ -109,6 +109,8 @@ function filter() {
 }
 
 function cleanFilter() {
+  document.getElementById('filterAbout').value = "";
+  document.getElementById('filterAdoptions').value = "";
   populateTable(localSubscribers);
 }
 
