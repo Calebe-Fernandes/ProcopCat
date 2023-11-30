@@ -16,11 +16,21 @@
 <body>
   <header>
     <nav>
-      <a href="index.html" style="display: flex;">
-        <img src="./assets/logo.svg" alt="" class="logo">
-      </a>
+      <div class="top">
+        <a href="index.html" style="display: flex;">
+          <img src="./assets/logo.svg" alt="" class="logo">
+        </a>
 
-      <div class="right-side">
+        <button class="open-menu" onclick="openMenu()">
+          <i class="fa-solid fa-bars open"></i>
+        </button>
+
+        <button class="close-menu" onclick="closeMenu()">
+          <i class="fa-solid fa-xmark close"></i>
+        </button>
+      </div>
+
+      <div class="pages">
         <a href="cats.html">
           Gatos para adoção
         </a>
@@ -28,9 +38,15 @@
         <a href="notifications.html">
           Me notifique!
         </a>
+        
+        <a href="subscribers.html">
+          Inscritos
+        </a>
       </div>
     </nav>
   </header>
+
+  <div class="header-modal-background"></div>
 
   <section id="cats-avaliable">
     <h2 class="text-center">Gatos para adoção</h2>
@@ -291,6 +307,8 @@
       </div>
     </div>
   </footer>
+
+  <script src="./scripts/header.js"></script>
 </body>
 
 </html>

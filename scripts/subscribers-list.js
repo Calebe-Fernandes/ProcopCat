@@ -1,35 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-  var subscribersList = [];
-
-  function saveToLocalStorage(event) {
-    event.preventDefault();
-  
-    var name = document.getElementById('name').value;
-    var lastName = document.getElementById('last-name').value;
-    var email = document.getElementById('email').value;
-    var about = document.getElementById('about').checked;
-    var adoptions = document.getElementById('adoptions').checked;
-  
-    var subscriber = {
-      fullName: name + ' ' + lastName,
-      email: email,
-      about: about,
-      adoptions: adoptions
-    }
-  
-    subscribersList.push(subscriber);
-  
-    const JsonSubscribersList = JSON.stringify(subscribersList);
-    localStorage.setItem('subscribersList', JsonSubscribersList);
-  }
-
-  var form = document.getElementById('subscription-form');
-  form.addEventListener('submit', function(event) {
-    saveToLocalStorage(event);
-  });
-});
-
-document.addEventListener('DOMContentLoaded', function() {
   getSubscribersFromLocalStorage();
 });
 
@@ -47,26 +16,34 @@ function populateTable(subscribersList) {
 
   tableBody.innerHTML = '';
 
+  if (localSubscribers.length === 0) {
+    var row = tableBody.insertRow();
+    var cell = row.insertCell(0);
+    cell.colSpan = 6;
+    cell.textContent = "Ainda não há inscritos.";
+    cell.classList.add("center");
+  } else if (subscribersList.length === 0) {
+    var row = tableBody.insertRow();
+    var cell = row.insertCell(0);
+    cell.colSpan = 6;
+    cell.textContent = "Nenhum inscrito nas condições do filtro";
+    cell.classList.add("center");
+  }
+
   subscribersList.forEach(function(subscriber, index) {
     var row = tableBody.insertRow();
 
     var td1 = row.insertCell(0);
-    td1.textContent = subscriber.fullName;
+    td1.textContent = subscriber.timestamp;
 
     var td2 = row.insertCell(1);
-    td2.textContent = subscriber.email;
+    td2.textContent = subscriber.fullName;
 
     var td3 = row.insertCell(2);
-    if(subscriber.about) {
-      td3.innerHTML = `<i class="fa-solid fa-circle-check"></i> Sim`;
-      td3.classList.add("center", "yes");
-    } else {
-      td3.innerHTML = `<i class="fa-solid fa-circle-xmark"></i> Não`;
-      td3.classList.add("center", "no");
-    }
+    td3.textContent = subscriber.email;
 
     var td4 = row.insertCell(3);
-    if(subscriber.adoptions) {
+    if(subscriber.about) {
       td4.innerHTML = `<i class="fa-solid fa-circle-check"></i> Sim`;
       td4.classList.add("center", "yes");
     } else {
@@ -75,7 +52,16 @@ function populateTable(subscribersList) {
     }
 
     var td5 = row.insertCell(4);
-    td5.innerHTML = `
+    if(subscriber.adoptions) {
+      td5.innerHTML = `<i class="fa-solid fa-circle-check"></i> Sim`;
+      td5.classList.add("center", "yes");
+    } else {
+      td5.innerHTML = `<i class="fa-solid fa-circle-xmark"></i> Não`;
+      td5.classList.add("center", "no");
+    }
+
+    var td6 = row.insertCell(5);
+    td6.innerHTML = `
       <button onclick="deleteSubscriber(${index})" class="delete-subscriber">
         <i class="fa-solid fa-trash-can"></i>
       </button>
@@ -84,15 +70,14 @@ function populateTable(subscribersList) {
 }
 
 function deleteSubscriber(index) {
-  var subscribersList = getSubscribersFromLocalStorage();
-  subscribersList.splice(index, 1);
-  localStorage.setItem('subscribersList', JSON.stringify(subscribersList));
-  populateTable();
+  localSubscribers.splice(index, 1);
+  localStorage.setItem('subscribersList', JSON.stringify(localSubscribers));
+  getSubscribersFromLocalStorage();
 }
 
 function deleteAll() {
   localStorage.removeItem('subscribersList');
-  populateTable();
+  getSubscribersFromLocalStorage();
 }
 
 function filter() {
@@ -113,4 +98,3 @@ function cleanFilter() {
   document.getElementById('filterAdoptions').value = "";
   populateTable(localSubscribers);
 }
-
