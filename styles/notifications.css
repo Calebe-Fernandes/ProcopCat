@@ -1,9 +1,3 @@
-body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
 section#get-notifications {
   background-color: #FFE4E4;
   padding: 60px 80px 100px;
@@ -15,7 +9,6 @@ section#get-notifications {
 @media screen and (max-width: 600px) {
   section#get-notifications {
     padding: 60px 40px 100px;
-    margin-top: 120px;
   }
 }
 
@@ -33,13 +26,6 @@ section#get-notifications h6 {
   max-width: 700px;
   font-weight: 400;
   margin: 0 auto 40px;
-}
-
-@media screen and (max-width: 600px) {
-  section#get-notifications p {
-    font-size: 14px;
-    margin: 0 auto 28px;
-  }
 }
 
 section#get-notifications .strong {
@@ -148,13 +134,33 @@ section#get-notifications input[type="checkbox"]:checked::before {
   opacity: 1;
 }
 
-section#get-notifications .submit {
+section#get-notifications .buttons-container {
   margin-top: 12px;
-  padding: 12px 24px;
-  background-color: #ff9e9e;
-  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  column-gap: 20px;
+  row-gap: 12px;
+}
 
+@media screen and (max-width: 450px) {
+  section#get-notifications .buttons-container {
+    flex-direction: column;
+    justify-content: end;
+  }
+}
+
+section#get-notifications .clean-fields, section#get-notifications .submit {
   font-size: 16px;
+  padding: 12px 24px;
+  border-radius: 8px;
+}
+
+section#get-notifications .clean-fields {
+  background-color: #ffffff;
+}
+
+section#get-notifications .submit {
+  background-color: #ff9e9e;
   font-weight: 600;
 }
 
@@ -175,4 +181,25 @@ section#get-notifications .paw-contour {
   right: 0;
   bottom: 200px;
   width: 150px;
+}
+
+section#get-notifications .subscribers {
+  border-top: 1px solid #f5b6b6;
+  margin-top: 32px;
+  padding-top: 20px;
+  text-align: center;
+}
+
+section#get-notifications p {
+  margin-bottom: 16px;
+}
+
+section#get-notifications .subscribers a {
+  font-size: 16px;
+  padding: 8px 24px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #f17b7b;
+  border: 2px solid #ff9e9e;
+  font-weight: 600;
 }

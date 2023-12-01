@@ -1,12 +1,11 @@
-section#cats-avaliable {
-  background-color: #fafafa;
-  padding: 140px 80px 60px;
+h2 {
+  text-align: center;
+  margin-bottom: 40px;
 }
 
-@media screen and (max-width: 600px) {
-  section#cats-avaliable {
-    padding: 200px 40px 60px;
-  }
+section#cats-avaliable {
+  background-color: #fffefe;
+  padding: 140px 80px 60px;
 }
 
 @media screen and (min-width: 1000px) {

@@ -10,33 +10,50 @@
   width: 12px;
 }
 
-*::-webkit-scrollbar-track {
-  background: #ffbdbd;
+*::-webkit-scrollbar-thumb {
+  background-color: rgb(241, 211, 211);
+  border-radius: 20px; 
+  border: 3px solid white;
+  margin: 3px;
 }
 
-*::-webkit-scrollbar-thumb {
-  background-color: #fdf0f0;
-  border-radius: 20px;
-  border: 3px solid #ffbdbd;
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 h2 {
   font-family: Mali;
   font-size: 32px;
   font-weight: 700;
-  text-align: center;
-  margin-bottom: 40px;
+}
+
+@media screen and (max-width: 600px) {
+  h2 {
+    font-size: 28px;
+  }
 }
 
 button, a, input[type="submit"] {
   cursor: pointer;
   transition: all 500ms;
   text-decoration: none;
+  background-color: unset;
 }
 
 button:hover, a:hover, input[type="submit"]:hover {
   -webkit-transform: translateY(-3px);
   transform: translateY(-3px);
+}
+
+.header-modal-background {
+  position: absolute;
+  background-color: rgba(29, 29, 29, 0.4);
+  height: 1000%;
+  width: 100%;
+  z-index: 5;
+  display: none;
 }
 
 header {
@@ -52,8 +69,8 @@ header {
 }
 
 @media screen and (max-width: 600px) {
-  header {
-    padding: 20px;
+  header {/* 
+    padding: 20px; */
     flex-direction: column;
     row-gap: 8px;
   }
@@ -73,18 +90,18 @@ nav {
   width: 100%;
 }
 
-@media screen and (max-width: 600px) {
+/* @media screen and (max-width: 600px) {
   nav {
     flex-direction: column;
     row-gap: 8px;
   }
-}
+} */
 
 header .logo {
   height: 44px;
 }
 
-header .right-side {
+header .pages {
   display: flex;
   flex-wrap: wrap;
   justify-content: end;
@@ -92,7 +109,7 @@ header .right-side {
   row-gap: 8px;
 }
 
-header .right-side a {
+header .pages a {
   padding: 12px 16px;
   border-radius: 4px;
   background-color: rgba(255, 234, 234, 0.5);
@@ -102,8 +119,60 @@ header .right-side a {
   text-align: center;
 }
 
-header .right-side a:hover{
+header .pages a:hover{
   background-color: rgba(255, 234, 234, 0.9);
+}
+
+header .open-menu {
+  display: none;
+  font-size: 24px;
+}
+
+header .close-menu {
+  display: none;
+  font-size: 24px;
+}
+
+@media screen and (max-width: 700px) {
+  header {
+    padding: 0;
+  }
+
+  header nav {
+    flex-direction: column;
+  }
+
+  header .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    min-height: 80px;
+    padding: 8px 20px;
+    gap: 20px;
+  }
+
+  header .logo {
+    max-width: 100%;
+    height: 40px;
+  }
+
+  header .open-menu {
+    display: block;
+  }
+
+  header .pages {
+    width: 100%;
+    flex-direction: column;
+    background-color: #ff9e9e;
+    gap: 16px;
+    padding: 32px 20px;
+    display: none;
+  }
+
+  header .pages a {
+    background-color: rgba(255, 234, 234, 0.7);
+  }
 }
 
 footer {
